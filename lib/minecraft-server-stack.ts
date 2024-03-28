@@ -11,7 +11,6 @@ export class MinecraftServerStack extends cdk.Stack {
     });
 
     const instance = new ec2.Instance(this, 'MinecraftServerInstance', {
-      keyPair: ec2.KeyPair.fromKeyPairName(this, 'MinecraftServerKeyPair', 'minecraft-server-key'),
       instanceType: new ec2.InstanceType('t2.medium'),
       machineImage: new ec2.AmazonLinuxImage({
         generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2023,
