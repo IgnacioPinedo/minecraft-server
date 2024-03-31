@@ -1,5 +1,4 @@
 import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 
 export function createEIP(stack: cdk.Stack, instance: ec2.Instance): ec2.CfnEIP {

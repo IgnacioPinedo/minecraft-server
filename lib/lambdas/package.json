@@ -1,0 +1,15 @@
+{
+  "name": "lambdas",
+  "version": "0.1.0",
+  "devDependencies": {
+    "@aws-sdk/client-ec2": "^3.544.0",
+    "@types/mcping-js": "^1.5.4",
+    "@types/node": "20.11.30",
+    "aws-cdk": "2.134.0",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.4.3"
+  },
+  "dependencies": {
+    "mcping-js": "^1.5.0"
+  }
+}
