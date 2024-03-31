@@ -19,7 +19,7 @@ export async function handler(): Promise<any> {
 
   if (instance?.State?.Name === 'running') {
     console.log('Server is running');
-    const serverIP = process.env.SERVER_IP || '';
+    const serverIP = instance.PublicIpAddress || '';
 
     const server = new MinecraftServer(serverIP);
 

@@ -12,8 +12,9 @@ export class MinecraftServerStack extends cdk.Stack {
 
     const vpc = createVpc(this);
     const instance = createEC2(this, vpc);
-    const eip = createEIP(this, instance);
+    // const eip = createEIP(this, instance);
     createAPI(this, instance);
-    createEvents(this, instance, eip);
+    // createEvents(this, instance, eip);
+    createEvents(this, instance);
   }
 }

@@ -35,7 +35,7 @@ export async function handler(): Promise<any> {
     case 'running':
       return {
         statusCode: 200,
-        body: JSON.stringify({ message: 'Server already running' }),
+        body: JSON.stringify({ message: 'Server already running at ' + instance.PublicIpAddress }),
       };
 
     case 'shutting-down':
@@ -64,10 +64,10 @@ export async function handler(): Promise<any> {
 
   await ec2Client.send(startInstancesCommand);
 
-  console.log('Server started');
+  console.log('Server is starting');
 
   return {
     statusCode: 200,
-    body: JSON.stringify({ message: 'Server started' }),
+    body: JSON.stringify({ message: 'Server is starting' }),
   };
 }
