@@ -79,10 +79,10 @@ export function createEC2(stack: cdk.Stack, vpc: ec2.IVpc): ec2.Instance {
     'max-world-size=29999984',
     'EOF',
     'sudo tee /opt/minecraft/server/ops.json << EOF', // Create ops.json file
-    '[{"uuid":"e5c6b6f1-0e7f-4a1a-9a3f-0f9d7c8d0a7d","name":"Igyigy97","level":4,"bypassesPlayerLimit":false}]', // Ops list
+    '[{"uuid":"b0954e7e-edd9-4bb6-8eba-b7b25cd43210","name":"Igyigy97","level":4,"bypassesPlayerLimit":false}]', // Ops list
     'EOF',
     'sudo tee /opt/minecraft/server/usercache.json << EOF', // Create usercache.json file
-    '[{"name":"Igyigy97","uuid":"e5c6b6f1-0e7f-4a1a-9a3f-0f9d7c8d0a7d","expiresOn":"2026-12-31 23:59:59 +0000"}]', // Usercache list
+    '[{"name":"Igyigy97","uuid":"b0954e7e-edd9-4bb6-8eba-b7b25cd43210","expiresOn":"2026-12-31 23:59:59 +0000"}]', // Usercache list
     'EOF',
     'sudo chown ec2-user:ec2-user /opt/minecraft/server/eula.txt', // Change ownership of eula.txt file to ec2-user
     'sudo chown ec2-user:ec2-user /opt/minecraft/server/server.properties', // Change ownership of server.properties file to ec2-user
