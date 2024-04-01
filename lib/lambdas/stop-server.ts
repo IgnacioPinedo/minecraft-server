@@ -19,6 +19,21 @@ export async function handler(): Promise<any> {
 
   if (instance?.State?.Name === 'running') {
     console.log('Server is running');
+
+    const launchTime = instance.LaunchTime || new Date();
+
+    const currentTime = new Date();
+
+    const diff = currentTime.getTime() - launchTime.getTime();
+
+    const minutes = Math.floor(diff / 60000);
+
+    console.log(`Server has been running for ${minutes} minutes`);
+    if (minutes < 20) {
+      console.log('Server has been running for less than 20 minutes. Ignoring request');
+      return;
+    }
+
     const serverIP = instance.PublicIpAddress || '';
 
     const server = new MinecraftServer(serverIP);
