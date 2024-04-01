@@ -78,8 +78,12 @@ export function createEC2(stack: cdk.Stack, vpc: ec2.IVpc): ec2.Instance {
     'resource-pack-sha1=',
     'max-world-size=29999984',
     'EOF',
+    'sudo tee /opt/minecraft/server/ops.json << EOF', // Create ops.json file
+    '[{"uuid":"e5c6b6f1-0e7f-4a1a-9a3f-0f9d7c8d0a7d","name":"Igyigy97","level":4}]', // Ops list
+    'EOF',
     'sudo chown ec2-user:ec2-user /opt/minecraft/server/eula.txt', // Change ownership of eula.txt file to ec2-user
     'sudo chown ec2-user:ec2-user /opt/minecraft/server/server.properties', // Change ownership of server.properties file to ec2-user
+    'sudo chown ec2-user:ec2-user /opt/minecraft/server/ops.json', // Change ownership of ops.json file to ec2-user
     'sudo chmod 444 /opt/minecraft/server/eula.txt', // Change permissions of eula.txt file
     'sudo chmod 444 /opt/minecraft/server/server.properties', // Change permissions of server.properties file
     'sudo tee /etc/systemd/system/minecraft.service << EOF', // Create systemd service file
