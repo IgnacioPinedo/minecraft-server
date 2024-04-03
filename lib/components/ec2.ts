@@ -88,8 +88,10 @@ export function createEC2(stack: cdk.Stack, vpc: ec2.IVpc): ec2.Instance {
     'sudo chown ec2-user:ec2-user /opt/minecraft/server/server.properties', // Change ownership of server.properties file to ec2-user
     'sudo chown ec2-user:ec2-user /opt/minecraft/server/ops.json', // Change ownership of ops.json file to ec2-user
     'sudo chown ec2-user:ec2-user /opt/minecraft/server/usercache.json', // Change ownership of usercache.json file to ec2-user
-    'sudo chmod 444 /opt/minecraft/server/eula.txt', // Change permissions of eula.txt file
-    'sudo chmod 444 /opt/minecraft/server/server.properties', // Change permissions of server.properties file
+    'sudo chmod 644 /opt/minecraft/server/eula.txt', // Change permissions of eula.txt file
+    'sudo chmod 644 /opt/minecraft/server/server.properties', // Change permissions of server.properties file
+    'sudo chmod 644 /opt/minecraft/server/ops.json', // Change permissions of ops.json file
+    'sudo chmod 644 /opt/minecraft/server/usercache.json', // Change permissions of usercache.json file
     'sudo tee /etc/systemd/system/minecraft.service << EOF', // Create systemd service file
     `[Unit]`,
     `Description=Minecraft Server`,
