@@ -13,7 +13,7 @@ export function createEC2(stack: cdk.Stack, vpc: ec2.IVpc): ec2.Instance {
   instance.addUserData(
     'sudo yum install -y java', // Install Java
     'sudo mkdir -p /opt/minecraft/server', // Create directory for Minecraft server
-    'sudo curl -o /opt/minecraft/server/server.jar https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar', // Download Minecraft server JAR
+    'sudo curl -o /opt/minecraft/server/server.jar https://piston-data.mojang.com/v1/objects/450698d1863ab5180c25d7c804ef0fe6369dd1ba/server.jar', // Download Minecraft server JAR
     'sudo chown ec2-user:ec2-user /opt/minecraft/server', // Change ownership of directory to ec2-user
     'sudo tee /opt/minecraft/server/eula.txt << EOF', // Create eula.txt file
     'eula=true', // Accept Minecraft EULA
