@@ -11,9 +11,9 @@ export function createEC2(stack: cdk.Stack, vpc: ec2.IVpc): ec2.Instance {
   });
 
   instance.addUserData(
-    'sudo yum install -y java', // Install Java
+    'sudo dnf install -y java-25-amazon-corretto-headless', // Install Java 25 (required by Minecraft 26.x)
     'sudo mkdir -p /opt/minecraft/server', // Create directory for Minecraft server
-    'sudo curl -o /opt/minecraft/server/server.jar https://piston-data.mojang.com/v1/objects/e6ec2f64e6080b9b5d9b471b291c33cc7f509733/server.jar', // Download Minecraft server JAR
+    'sudo curl -o /opt/minecraft/server/server.jar https://piston-data.mojang.com/v1/objects/33680f5f2ac32864d6d7cf5e56a705fdb3e05f4c/server.jar', // Download Minecraft server JAR (26.3)
     'sudo chown ec2-user:ec2-user /opt/minecraft/server', // Change ownership of directory to ec2-user
     'sudo tee /opt/minecraft/server/eula.txt << EOF', // Create eula.txt file
     'eula=true', // Accept Minecraft EULA
