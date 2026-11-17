@@ -14,7 +14,7 @@ export async function handler(): Promise<any> {
 
   const describeInstancesResponse = await ec2Client.send(describeInstancesCommand);
 
-  const instance = describeInstancesResponse.Reservations?.[0].Instances?.[0];
+  const instance = describeInstancesResponse.Reservations?.[0]?.Instances?.[0];
 
   if (!instance) {
     console.error('Instance not found');
