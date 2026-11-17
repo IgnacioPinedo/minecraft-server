@@ -1,28 +1,21 @@
 {
   "name": "minecraft-server",
   "version": "0.1.0",
-  "bin": {
-    "minecraft-server": "bin/minecraft-server.js"
-  },
   "scripts": {
     "build": "tsc --noEmit",
-    "watch": "tsc --noEmit -w",
-    "cdk": "cdk"
+    "dev": "sst dev",
+    "deploy": "sst deploy --stage production",
+    "diff": "sst diff --stage production"
   },
   "devDependencies": {
     "@aws-sdk/client-ec2": "^3.1170.0",
     "@types/mcping-js": "^1.5.4",
     "@types/node": "^24.19.2",
-    "aws-cdk": "2.1148.1",
-    "esbuild": "^0.25.12",
-    "ts-node": "^10.9.2",
+    "sst": "4.17.2",
     "typescript": "~5.9"
   },
   "dependencies": {
-    "aws-cdk-lib": "2.277.0",
-    "constructs": "^10.8.1",
-    "mcping-js": "^1.5.0",
-    "source-map-support": "^0.5.21"
+    "mcping-js": "^1.5.0"
   },
   "engines": {
     "node": ">=22"

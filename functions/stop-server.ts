@@ -43,9 +43,8 @@ export async function handler(): Promise<any> {
   console.log('Checking server status');
   const instanceId = process.env.INSTANCE_ID || '';
 
-  const ec2Client = new EC2Client({
-    region: 'us-east-2',
-  });
+  // Region comes from the Lambda environment (AWS_REGION).
+  const ec2Client = new EC2Client({});
 
   const describeInstancesCommand = new DescribeInstancesCommand({
     InstanceIds: [instanceId],
